@@ -3,7 +3,7 @@ import styled from "styled-components";
 import GoogleIcon from "../assets/googleIcon.svg";
 import { Link } from "react-router-dom";
 
-export const Login = () => {
+export const SignUp = () => {
     const [email, setEmail] = useState<string>("");
     const [emailError, setEmailError] = useState<boolean>(false);
 
@@ -25,8 +25,14 @@ export const Login = () => {
     return (
         <Wrapper>
             <div>
-                <Title>로그인</Title>
+                <Title>회원가입</Title>
                 <InputWrapper>
+                    <InputWrap>
+                        <p>이름</p>
+                        <InputBox>
+                            <input placeholder="이름을 입력하세요" type="text"></input>
+                        </InputBox>
+                    </InputWrap>
                     <InputWrap>
                         <p>이메일</p>
                         <InputBox>
@@ -52,13 +58,13 @@ export const Login = () => {
                     <img src={GoogleIcon} />
                     <p>Google로 계속하기</p>
                 </GoogleLogin>
-                <LoginButton>로그인</LoginButton>
-                <SignUpButtonWrap>
-                    <p>아직 회원이 아니라면?</p>
-                    <Link to={"/signUp"}>
-                        <p className="signUp">회원가입 하기</p>
+                <LoginButton>회원가입</LoginButton>
+                <LoginButtonWrap>
+                    <p>이미 회원이신가요?</p>
+                    <Link to={"/login"}>
+                        <p className="login">로그인 하기</p>
                     </Link>
-                </SignUpButtonWrap>
+                </LoginButtonWrap>
             </div>
         </Wrapper>
     );
@@ -162,12 +168,12 @@ const LoginButton = styled.button`
     }
 `;
 
-const SignUpButtonWrap = styled.div`
+const LoginButtonWrap = styled.div`
     display: flex;
     justify-content: center;
     gap: 5px;
     margin-top: 10px;
-    .signUp {
+    .login {
         color: #4579ff;
         cursor: pointer;
     }
