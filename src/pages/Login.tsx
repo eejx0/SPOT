@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import GoogleIcon from "../assets/googleIcon.svg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
     const [email, setEmail] = useState<string>("");
     const [emailError, setEmailError] = useState<boolean>(false);
+    const navigate = useNavigate();
 
     const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
 
@@ -16,6 +18,10 @@ export const Login = () => {
         } else {
             setEmailError(false);
         }
+    };
+
+    const onSubmit = () => {
+        navigate("/");
     };
 
     useEffect(() => {
@@ -52,7 +58,7 @@ export const Login = () => {
                     <img src={GoogleIcon} />
                     <p>Google로 계속하기</p>
                 </GoogleLogin>
-                <LoginButton>로그인</LoginButton>
+                <LoginButton onClick={onSubmit}>로그인</LoginButton>
                 <SignUpButtonWrap>
                     <p>아직 회원이 아니라면?</p>
                     <Link to={"/signUp"}>
