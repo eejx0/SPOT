@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
         user-select: none;
         text-decoration: none;
         ::-webkit-scrollbar {
-            width: 0px;
+            width: 1px;
         }
     }
 

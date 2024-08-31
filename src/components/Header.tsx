@@ -3,32 +3,36 @@ import Logo from "../assets/Logo.svg";
 import SearchIcon from "../assets/SearchIcon.svg";
 import PersonIcon from "../assets/PersonIcon.svg";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 export const Header = () => {
     const [searchBox, setSearchBox] = useState<boolean>(false);
     return (
-        <Wrapper>
-            <img src={Logo}></img>
-            <div>
-                <SearchWrap>
-                    <input
-                        placeholder="내용을 검색하세요..."
-                        style={{
-                            width: searchBox ? "290px" : "0px",
-                            opacity: searchBox ? 1 : 0,
-                        }}
-                    />
-                    <img
-                        className="icon"
-                        src={SearchIcon}
-                        onClick={() => {
-                            setSearchBox(!searchBox);
-                        }}
-                    />
-                </SearchWrap>
-                <img className="icon" src={PersonIcon} />
-            </div>
-        </Wrapper>
+        <>
+            <Wrapper>
+                <img src={Logo}></img>
+                <div>
+                    <SearchWrap>
+                        <input
+                            placeholder="내용을 검색하세요..."
+                            style={{
+                                width: searchBox ? "290px" : "0px",
+                                opacity: searchBox ? 1 : 0,
+                            }}
+                        />
+                        <img
+                            className="icon"
+                            src={SearchIcon}
+                            onClick={() => {
+                                setSearchBox(!searchBox);
+                            }}
+                        />
+                    </SearchWrap>
+                    <img className="icon" src={PersonIcon} />
+                </div>
+            </Wrapper>
+            <Outlet />
+        </>
     );
 };
 

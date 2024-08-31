@@ -28,7 +28,6 @@ const Router = createBrowserRouter([
             //     ),
             // },
             // 이거 처럼 ProtectedRoute라는 컴포넌트로 유저가 로그인 되어있는지 확인하기
-            // 로그인, 회원가입은 ProtectedRoute로 감쌀 필요 없음!
         ],
     },
     {
