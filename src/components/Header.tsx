@@ -40,6 +40,8 @@ const Wrapper = styled.div`
     width: 100vw;
     display: flex;
     align-items: center;
+    position: fixed;
+    background-color: white;
     height: 65px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.16);
     > div {
@@ -75,5 +77,8 @@ const SearchWrap = styled.div`
         border-radius: 5px;
         font-size: 15px;
         transition: width 0.3s ease, opacity 0.3s ease;
+        &:focus {
+            border-color: #4579ff;
+        }
     }
 `;
