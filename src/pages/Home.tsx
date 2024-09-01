@@ -8,7 +8,6 @@ export const Home = () => {
             <Wrap>
                 <WriteBox />
                 <PostBox />
-                <PostBox />
             </Wrap>
         </Wrapper>
     );
